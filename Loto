@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main() 
+{
+	int secsay[6],toplar[6];
+	int i,j;
+	int sayi,flag;
+	srand(time(NULL));
+	printf("Sectiginiz sayilari giriniz: \n");
+	for(i=0;i<6;i++)
+	{
+		scanf("%d",&secsay[i]);
+	}
+	printf("\n------------------\n");
+	printf("Sectiginiz sayilar\n");
+	for(i=0;i<6;i++)
+		printf("%d\t",secsay[i]);
+	
+	printf("\n");
+	for(i=0;i<6;i++)
+	{
+		do{
+			flag=0;
+			sayi=rand()%49+1;
+			for(j=0;j<i;j++) 
+				if(sayi==toplar[j])
+					flag=1;
+		}while(flag);
+		toplar[i]=sayi;
+	}
+		
+	printf("Toplar\n");
+	for(i=0;i<6;i++)
+		printf("%d\t",toplar[i]);
+		
+	printf("\n------------------\n");
+	
+	for(i=0;i<6;i++)
+		for(j=0;j<6;j++)
+			if(toplar[i]==secsay[j])
+				printf("\n%d sayisini bildin.",secsay[j]);
+	
+	return 0;
+}
