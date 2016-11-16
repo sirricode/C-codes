@@ -11,9 +11,8 @@ int main()
 	srand(time(NULL));
 	printf("Sectiginiz sayilari giriniz: \n");
 	for(i=0;i<6;i++)
-	{
 		scanf("%d",&secsay[i]);
-	}
+	
 	printf("\n------------------\n");
 	printf("Sectiginiz sayilar\n");
 	for(i=0;i<6;i++)
