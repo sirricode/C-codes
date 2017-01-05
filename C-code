@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/*xXxSirrixXx*/
+#define NELEMS(x)  (sizeof(x) / sizeof((x)[0])) //Dizi eleman sayısını bulmak için makro.
+
+
+void dizidoldur(int *ptr,int); //  Gelecek 
+void dizibas(int *ptr,int);    //  fonksiyonların
+void dizisirala(int *ptr,int); //  prototiplemesi
+int i,j;   //For döngüleri için global tanımlar.
+
+int main(int argc, char *argv[]) {
+	srand( time( NULL ) ); 
+	
+	int dizi[100];
+	
+	
+	dizidoldur(	dizi,	NELEMS(dizi));   // Gönderilen dizinin içini dolduran fonksiyon
+	dizisirala(	dizi,	NELEMS(dizi));   // Gönderilen dizinin içindeki sayıları sıralayan fonksiyon
+	dizibas(	dizi,	NELEMS(dizi));     // Gönderilen diziyi ekrana bastıran fonksiyon
+	
+	getchar();
+	return 0;
+}
+
+void dizidoldur(int *ptr,int boyut)
+{
+	for(i=0;i<boyut;i++)
+	{
+		ptr[i] = rand()%1000;
+	}
+}
+
+
+void dizibas(int *ptr,int boyut)
+{
+	for(i=0;i<boyut;i++)
+	{
+		printf("%d. eleman: %d\n",i+1,*(ptr+i));
+	}
+}
+
+
+void dizisirala(int dizi[],int boyut)
+{
+	int kova,maks,indis;
+	for(i=0;i<boyut;i++)
+	{
+		maks=-1;
+		for(j=0;j<boyut-i;j++)
+		{
+			if(dizi[j]>maks)
+			{
+				maks= dizi[j];
+				indis= j;
+			}
+		}
+		dizi[indis]=dizi[j-1];
+		dizi[j-1] = maks;
+	}
+}
