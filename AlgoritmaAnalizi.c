@@ -1,9 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-/*
-	Kerim Hakan Sırrı
-	163301027
-*/
+
 
 
 /* 
@@ -26,9 +23,9 @@ int matematikselCozum(int nSayi){			//			-			//		-				//		-
 	return toplam;      					//			1			//		1				//		1					
 											//						//						//	T(n)=6
 }											//
-											// Sonuc olarak matematiksel islem ile yapılan algoritma
-											// yürütme zamanı açısından daha iyidir çünkü
-											// donguyle yapılan islem N sayısına bağlı olarak artarken 
+											// Sonuc olarak matematiksel islem ile yapÃ½lan algoritma
+											// yÃ¼rÃ¼tme zamanÃ½ aÃ§Ã½sÃ½ndan daha iyidir Ã§Ã¼nkÃ¼
+											// donguyle yapÃ½lan islem N sayÃ½sÃ½na baÃ°lÃ½ olarak artarken 
 											// matematiksel islem daima sabittir.
 int main(){
 	int i,nSayi;
